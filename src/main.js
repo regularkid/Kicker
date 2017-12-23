@@ -16,7 +16,7 @@ var assets =
     "sounds/boinkReverb.wav"
 ];
 
-var g = ga(640, 800, onLoadComplete, assets);
+var g = gaEngine(640, 800, onLoadComplete, assets);
 g.start();
 
 function onLoadComplete()
