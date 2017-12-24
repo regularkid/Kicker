@@ -7,6 +7,8 @@ var powerMeterFg;
 var powerMeterIncreaseAmount = 17;
 var powerMeterDecreasePerSec = 40;
 var resultsText;
+var curRecordText;
+var curWeekText;
 
 function initUI()
 {
@@ -19,6 +21,8 @@ function initUI()
     powerMeterFg = g.rectangle(12, 12, "#00FF21", "#00FF21", 5, 100, 100);
     powerMeterBg.layer = 1;
     powerMeterFg.layer = 2;
+
+    showHUD();
 }
 
 function resetAngleMeterPos()
@@ -116,4 +120,29 @@ function showResultsText()
 function hideResultsText()
 {
     g.remove(resultsText);
+}
+
+function showHUD()
+{
+    curWeekText = g.text(getCurWeekText(), "35px upheavtt", "rgb(255, 255, 255)", 10, 5);
+    curWeekText.layer = 10;
+    curWeekText.shadow = true;
+    curWeekText.shadowColor = "rgba(0, 0, 0, 1)";
+    curWeekText.shadowOffsetX = -3;
+    curWeekText.shadowOffsetY = 3;
+    curWeekText.shadowBlur = 0;
+
+    curRecordText = g.text(getCurRecordText(), "35px upheavtt", "rgb(255, 255, 255)", 10, 32);
+    curRecordText.layer = 10;
+    curRecordText.shadow = true;
+    curRecordText.shadowColor = "rgba(0, 0, 0, 1)";
+    curRecordText.shadowOffsetX = -3;
+    curRecordText.shadowOffsetY = 3;
+    curRecordText.shadowBlur = 0;
+}
+
+function updateHUD()
+{
+    curWeekText.content = getCurWeekText();
+    curRecordText.content = getCurRecordText();
 }

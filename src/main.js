@@ -21,6 +21,7 @@ g.start();
 
 function onLoadComplete()
 {
+    initProgression();
     initField();
     initBall();
     initWind();

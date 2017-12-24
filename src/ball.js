@@ -95,7 +95,7 @@ function updateBallStatus()
             ballStatus = BallStatusEnum.Boink;
         }
         // Hit cross-bar
-        else if (ballPos.x >= 21.25 && ballPos.x <= 28.75 && ballPos.z >= 9.0 && ballPos.z <= 12.0)
+        else if (ballPos.x >= 21.25 && ballPos.x <= 28.75 && ballPos.z >= 8.5 && ballPos.z <= 12.0)
         {
             ballStatus = BallStatusEnum.Boink;
         }

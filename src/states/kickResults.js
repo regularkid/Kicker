@@ -9,10 +9,12 @@ function setState_KickResults()
     if (ballStatus == BallStatusEnum.Good)
     {
         playRefereeAnim("good");
+        numWins = numWins + 1;
     }
     else
     {
         playRefereeAnim("noGood");
+        numLosses = numLosses + 1;
     }
 
     kickResultsTime = 2.0;
@@ -31,5 +33,14 @@ function kickResults()
     {
         hideResultsText();
         setState_PreSnap();
+
+        // DEBUG
+        if (getCurWeek() == 16)
+        {
+            if (numWins <= numLosses)
+            {
+                resetProgression();
+            }
+        }
     }
 }

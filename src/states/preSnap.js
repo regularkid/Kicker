@@ -8,6 +8,7 @@ function setState_PreSnap()
     resetAngleMeterPos();
     showAngleMeter(true);
     showPowerMeter(false);
+    updateHUD();
     resetInputBindings();
 
     g.key.upArrow.press = function()
