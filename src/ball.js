@@ -157,7 +157,12 @@ function updateBallDisplay()
 
 function resetBall()
 {
-    ballPos = {x: 21.5 + Math.random()*7.0, y: Math.floor(20 + Math.random()*25), z: 0};
+    var minDistance = 15;
+    var maxDistance = 33;
+    var maxWindowOffset = 10;
+    var curDistance = minDistance + (maxDistance - minDistance)*(getCurWeek() / 19.0);
+
+    ballPos = {x: 21.5 + Math.random()*7.0, y: Math.floor(curDistance + Math.random()*maxWindowOffset), z: 0};
     ballVel = {x: 0, y: 0, z: 0};
     updateBallDisplay();
 
@@ -191,8 +196,9 @@ function startBallKick()
     kickUpSfx.play();
     kickHitSfx.play();
 
+    var power = getPowerMeterValue()*getPowerMeterValue();
     ballVel.x = getAngleMeterValue() * 8;
-    ballVel.y = -13 - (getPowerMeterValue() * 23);
+    ballVel.y = -12 - (power * 26);
     ballVel.z = 40;
     airControlValue = airControlStartValue;
 

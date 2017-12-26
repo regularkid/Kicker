@@ -32,16 +32,13 @@ function kickResults()
     kickResultsTime -= elapsed;
     if (kickResultsTime <= 0.0)
     {
+        // DEBUG
+        if ((getCurWeek() == 16 && numWins <= numLosses) || (getCurWeek() > 16 && ballStatus != BallStatusEnum.Good))
+        {
+            resetProgression();
+        }
+        
         hideResultsText();
         setState_PreSnap();
-
-        // DEBUG
-        if (getCurWeek() == 16)
-        {
-            if (numWins <= numLosses)
-            {
-                resetProgression();
-            }
-        }
     }
 }
