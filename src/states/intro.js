@@ -9,7 +9,7 @@ function setState_Intro()
     showAngleMeter(false);
     showPowerMeter(false);
     playBallAnim("idle");
-    ball.y = 560;
+    ball.y = 595;
     ball.scaleX = 10.0;
     ball.scaleY = 10.0;
     sortBallAboveUI();
@@ -33,8 +33,10 @@ function setState_Intro()
     introDescText[3] = g.text("to find out if you have what it takes", "30px upheavtt", "rgb(255, 255, 255)", 320, 190);
     introDescText[4] = g.text("to be a champion.", "30px upheavtt", "rgb(255, 255, 255)", 320, 215);
     introDescText[5] = g.text("Controls", "50px upheavtt", "rgb(0, 180, 255)", 320, 310);
-    introDescText[6] = g.text("Press 'up' to control angle and power", "30px upheavtt", "rgb(255, 255, 255)", 320, 360);
+    introDescText[6] = g.text("Press 'up' to control angle and power", "30px upheavtt", "rgb(255, 255, 255)", 313, 360);
     introDescText[7] = g.text("Press 'left' and 'right' to nudge in air", "30px upheavtt", "rgb(255, 255, 255)", 320, 385);
+    introDescText[8] = g.text("Press 's' to toggle sounds", "30px upheavtt", "rgb(255, 255, 255)", 220, 410);
+    introDescText[9] = g.text("Press 'm' to toggle music", "30px upheavtt", "rgb(255, 255, 255)", 213, 435);
 
     for (var i = 0; i < introDescText.length; i++)
     {

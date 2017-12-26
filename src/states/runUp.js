@@ -19,6 +19,10 @@ function setState_RunUp()
         }
     };
 
+    // DEBUG
+    runTime = 1.0;
+    showPowerMeter(true);
+
     g.state = runUp;
 }
 
