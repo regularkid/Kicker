@@ -14,4 +14,5 @@ function resetInputBindings()
     g.key.upArrow.press = undefined;
     g.key.leftArrow.press = undefined;
     g.key.rightArrow.press = undefined;
+    g.key.r.press = undefined;
 }

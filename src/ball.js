@@ -18,6 +18,7 @@ var landSfx;
 var boinkHitSfx;
 var boinkReverbSfx;
 var crowdSfx;
+var ballResetSfx;
 var kickDistance;
 var maxKickDistance;
 
@@ -56,6 +57,7 @@ function initBall()
     boinkReverbSfx.volume = 0.2;
     crowdSfx = g.sound("sounds/crowd.wav");
     crowdSfx.volume = 0.5;
+    ballResetSfx = g.sound("sounds/ballReset.wav");
 
     maxKickDistance = -1;
 }
@@ -170,6 +172,8 @@ function resetBall()
 
     ballStatus = BallStatusEnum.None;
     kickDistance = ballPos.y + 17;
+
+    ballResetSfx.play();
 }
 
 function playBallAnim(animName)

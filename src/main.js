@@ -14,7 +14,10 @@ var assets =
     "sounds/land.wav",
     "sounds/boinkHit.wav",
     "sounds/boinkReverb.wav",
-    "sounds/crowd.wav"
+    "sounds/crowd.wav",
+    "sounds/gameOver.wav",
+    "sounds/champions.wav",
+    "sounds/ballReset.wav"
 ];
 
 var g = gaEngine(640, 851, onLoadComplete, assets);
@@ -29,6 +32,11 @@ function onLoadComplete()
     initReferees();
     initUI();
     initCrowd();
+    initGameOver();
+
+    g.key.m = g.keyboard(77);
+    g.key.r = g.keyboard(82);
+    g.key.s = g.keyboard(83);
 
     setState_PreSnap();
 }

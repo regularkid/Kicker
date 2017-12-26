@@ -169,3 +169,8 @@ function updateHUD()
     curDistanceText.content = getCurDistanceText();
     maxDistanceText.content = getMaxDistanceText();
 }
+
+function updateHUDRecordOnly()
+{
+    curRecordText.content = getCurRecordText();
+}
