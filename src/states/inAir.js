@@ -10,6 +10,7 @@ function inAir()
 {
     updateWind();
     updateBall();
+    updateCrowd();
 
     if (ballStatus != BallStatusEnum.None)
     {

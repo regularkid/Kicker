@@ -17,6 +17,7 @@ var noGoodSfx;
 var landSfx;
 var boinkHitSfx;
 var boinkReverbSfx;
+var crowdSfx;
 var kickDistance;
 var maxKickDistance;
 
@@ -53,6 +54,8 @@ function initBall()
     boinkHitSfx = g.sound("sounds/boinkHit.wav");
     boinkReverbSfx = g.sound("sounds/boinkReverb.wav");
     boinkReverbSfx.volume = 0.2;
+    crowdSfx = g.sound("sounds/crowd.wav");
+    crowdSfx.volume = 0.5;
 
     maxKickDistance = -1;
 }
@@ -119,8 +122,6 @@ function updateBallStatus()
             ballStatus = BallStatusEnum.NoGood;
         }
 
-        console.log("Ball Pos: " + ballPos.x + ", " + ballPos.y + ", " + ballPos.z);
-
         // Boink velocity adjustment
         if (ballStatus == BallStatusEnum.Boink)
         {
@@ -134,6 +135,7 @@ function updateBallStatus()
         if (ballStatus == BallStatusEnum.Good)
         {
             goodSfx.play();
+            crowdSfx.play();
         }
         else
         {

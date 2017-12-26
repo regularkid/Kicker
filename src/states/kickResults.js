@@ -11,6 +11,8 @@ function setState_KickResults()
         playRefereeAnim("good");
         numWins = numWins + 1;
         maxKickDistance = Math.max(kickDistance, maxKickDistance);
+
+        setCrowdHappy();
     }
     else
     {
@@ -18,7 +20,7 @@ function setState_KickResults()
         numLosses = numLosses + 1;
     }
 
-    kickResultsTime = 2.0;
+    kickResultsTime = 3.0;
 
     g.state = kickResults;
 }
@@ -27,6 +29,7 @@ function kickResults()
 {
     updateWind();
     updateBall();
+    updateCrowd();
 
     var elapsed = 1.0 / g.fps;
     kickResultsTime -= elapsed;
@@ -37,7 +40,7 @@ function kickResults()
         {
             resetProgression();
         }
-        
+
         hideResultsText();
         setState_PreSnap();
     }

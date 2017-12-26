@@ -14,6 +14,7 @@ function setState_Snap()
 function snap()
 {
     updateBall();
+    updateCrowd();
     
     var elapsed = 1.0 / g.fps;
     snapTime -= elapsed;

@@ -24,6 +24,8 @@ function setState_RunUp()
 
 function runUp()
 {
+    updateCrowd();
+    
     if (runTime > 0.0)
     {
         updatePowerMeter();

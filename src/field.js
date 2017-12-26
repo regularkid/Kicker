@@ -4,7 +4,7 @@ var net;
 function initField()
 {
     var field = g.sprite("sprites/field.png");
-    field.layer = -1;
+    field.layer = -3;
 
     uprights = g.sprite("sprites/uprights.png");
     uprights.setPosition((g.canvas.width / 2) - uprights.halfWidth, 61);

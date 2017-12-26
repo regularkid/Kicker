@@ -13,7 +13,8 @@ var assets =
     "sounds/kickHit.wav",
     "sounds/land.wav",
     "sounds/boinkHit.wav",
-    "sounds/boinkReverb.wav"
+    "sounds/boinkReverb.wav",
+    "sounds/crowd.wav"
 ];
 
 var g = gaEngine(640, 851, onLoadComplete, assets);
@@ -27,6 +28,7 @@ function onLoadComplete()
     initWind();
     initReferees();
     initUI();
+    initCrowd();
 
     setState_PreSnap();
 }

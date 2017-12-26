@@ -9,6 +9,7 @@ function setState_PreSnap()
     showAngleMeter(true);
     showPowerMeter(false);
     updateHUD();
+    setCrowdIdle();
     resetInputBindings();
 
     g.key.upArrow.press = function()
@@ -23,4 +24,5 @@ function preSnap()
 {
     updateBall();
     updateAngleMeter();
+    updateCrowd();
 }
