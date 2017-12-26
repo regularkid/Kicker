@@ -8,6 +8,11 @@ function setState_Intro()
 {
     showAngleMeter(false);
     showPowerMeter(false);
+    playBallAnim("idle");
+    ball.y = 560;
+    ball.scaleX = 10.0;
+    ball.scaleY = 10.0;
+    sortBallAboveUI();
     resetInputBindings();
 
     introBackground = g.rectangle(g.canvas.width, g.canvas.height, "#282828", "#282828", 0, 0, 0);
@@ -61,7 +66,6 @@ function setState_Intro()
 function intro()
 {
     updateWind();
-    updateBall();
     updateCrowd();
 
     var elapsed = 1.0 / g.fps;

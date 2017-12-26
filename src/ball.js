@@ -232,3 +232,9 @@ function sortBallBelowUprights()
     ball.layer = 2;
     ballShadow.layer = 1;
 }
+
+function sortBallAboveUI()
+{
+    ball.layer = 12;
+    ballShadow.layer = 11;
+}
