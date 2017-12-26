@@ -10,6 +10,7 @@ function setState_KickResults()
     {
         playRefereeAnim("good");
         numWins = numWins + 1;
+        maxKickDistance = Math.max(kickDistance, maxKickDistance);
     }
     else
     {

@@ -9,6 +9,8 @@ var powerMeterDecreasePerSec = 40;
 var resultsText;
 var curRecordText;
 var curWeekText;
+var curDistanceText;
+var maxDistanceText;
 
 function initUI()
 {
@@ -100,12 +102,12 @@ function showResultsText()
 {
     if (ballStatus == BallStatusEnum.Good)
     {
-        resultsText = g.text("It's Good!", "50px upheavtt", "rgb(0, 255, 0)", 200, 187);
+        resultsText = g.text("It's Good!", "70px upheavtt", "rgb(0, 255, 0)", 320, 200);
         g.tweenProperty(resultsText, "x", -100, resultsText.x, 60, "deceleration10");
     }
     else
     {
-        resultsText = g.text("No Good!", "50px upheavtt", "red", 220, 187);
+        resultsText = g.text("No Good!", "70px upheavtt", "red", 320, 200);
         g.tweenProperty(resultsText, "x", 640, resultsText.x, 60, "deceleration10");
     }
 
@@ -115,6 +117,7 @@ function showResultsText()
     resultsText.shadowOffsetX = -3;
     resultsText.shadowOffsetY = 3;
     resultsText.shadowBlur = 0;
+    resultsText.textAlign = "center";
 }
 
 function hideResultsText()
@@ -139,10 +142,30 @@ function showHUD()
     curRecordText.shadowOffsetX = -3;
     curRecordText.shadowOffsetY = 3;
     curRecordText.shadowBlur = 0;
+
+    curDistanceText = g.text(getCurDistanceText(), "35px upheavtt", "rgb(255, 255, 255)", 630, 5);
+    curDistanceText.layer = 10;
+    curDistanceText.shadow = true;
+    curDistanceText.shadowColor = "rgba(0, 0, 0, 1)";
+    curDistanceText.shadowOffsetX = -3;
+    curDistanceText.shadowOffsetY = 3;
+    curDistanceText.shadowBlur = 0;
+    curDistanceText.textAlign = "right";
+
+    maxDistanceText = g.text(getMaxDistanceText(), "35px upheavtt", "rgb(255, 255, 255)", 630, 32);
+    maxDistanceText.layer = 10;
+    maxDistanceText.shadow = true;
+    maxDistanceText.shadowColor = "rgba(0, 0, 0, 1)";
+    maxDistanceText.shadowOffsetX = -3;
+    maxDistanceText.shadowOffsetY = 3;
+    maxDistanceText.shadowBlur = 0;
+    maxDistanceText.textAlign = "right";
 }
 
 function updateHUD()
 {
     curWeekText.content = getCurWeekText();
     curRecordText.content = getCurRecordText();
+    curDistanceText.content = getCurDistanceText();
+    maxDistanceText.content = getMaxDistanceText();
 }

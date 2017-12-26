@@ -17,6 +17,8 @@ var noGoodSfx;
 var landSfx;
 var boinkHitSfx;
 var boinkReverbSfx;
+var kickDistance;
+var maxKickDistance;
 
 var BallStatusEnum =
 {
@@ -51,6 +53,8 @@ function initBall()
     boinkHitSfx = g.sound("sounds/boinkHit.wav");
     boinkReverbSfx = g.sound("sounds/boinkReverb.wav");
     boinkReverbSfx.volume = 0.2;
+
+    maxKickDistance = -1;
 }
 
 function updateBall()
@@ -87,7 +91,7 @@ function updateBallPhysics()
 function updateBallStatus()
 {
     // This is super ugly / hacky, but... oh well :)
-    if (hasValueDecreasedTo(ballPos.y, prevPos.y, -5.5))
+    if (hasValueDecreasedTo(ballPos.y, prevPos.y, -10.5))
     {
         // Hit bottom support
         if (ballPos.x >= 24.5 && ballPos.x <= 25.5 && ballPos.z >= 0.0 && ballPos.z <= 12.0)
@@ -114,6 +118,8 @@ function updateBallStatus()
         {
             ballStatus = BallStatusEnum.NoGood;
         }
+
+        console.log("Ball Pos: " + ballPos.x + ", " + ballPos.y + ", " + ballPos.z);
 
         // Boink velocity adjustment
         if (ballStatus == BallStatusEnum.Boink)
@@ -143,7 +149,7 @@ function updateBallDisplay()
     ballShadow.x -= 1;
     ballShadow.y += 1;
 
-    if (hasValueDecreasedTo(ballPos.y, prevPos.y, -8.0))
+    if (hasValueDecreasedTo(ballPos.y, prevPos.y, -13.0))
     {
         sortBallBelowUprights();
     }
@@ -151,11 +157,12 @@ function updateBallDisplay()
 
 function resetBall()
 {
-    ballPos = {x: 21.5 + Math.random()*7.0, y: 20 + Math.random()*25, z: 0};
+    ballPos = {x: 21.5 + Math.random()*7.0, y: Math.floor(20 + Math.random()*25), z: 0};
     ballVel = {x: 0, y: 0, z: 0};
     updateBallDisplay();
 
     ballStatus = BallStatusEnum.None;
+    kickDistance = ballPos.y + 17;
 }
 
 function playBallAnim(animName)
@@ -185,7 +192,7 @@ function startBallKick()
     kickHitSfx.play();
 
     ballVel.x = getAngleMeterValue() * 8;
-    ballVel.y = -10 - (getPowerMeterValue() * 23);
+    ballVel.y = -13 - (getPowerMeterValue() * 23);
     ballVel.z = 40;
     airControlValue = airControlStartValue;
 

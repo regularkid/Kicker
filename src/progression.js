@@ -23,11 +23,11 @@ function getCurWeekText()
 
     if (curWeek == 17)
     {
-        return "Divisional Playoffs";
+        return "Div. Playoffs";
     }
     else if (curWeek == 18)
     {
-        return "Conference Championship";
+        return "Conf. Championship";
     }
     else if (curWeek == 19)
     {
@@ -40,4 +40,19 @@ function getCurWeekText()
 function getCurRecordText()
 {
     return numWins + " - " + numLosses;
+}
+
+function getCurDistanceText()
+{
+    return "Cur: " + kickDistance + " yds";
+}
+
+function getMaxDistanceText()
+{
+    if (maxKickDistance > 0)
+    {
+        return "Max: " + maxKickDistance + " yds";
+    }
+
+    return "Max: --";
 }

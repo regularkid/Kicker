@@ -14,7 +14,7 @@ function initField()
 function setFieldPos(sprite, xField, yField, zField)
 {
     var xScreen = (xField / 50) * g.canvas.width;
-    var yScreen = 240 + (yField * 10.2);
+    var yScreen = 291 + (yField * 10.2);
 
     var zScale = (zField / 25.0);
     var zOffset = zScale * 100.0;
