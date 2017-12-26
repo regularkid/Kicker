@@ -35,7 +35,7 @@ function setState_GameOver()
             g.tweenProperty(gameOverTextDesc[i], "x", -100, gameOverTextDesc[i].x, 60, "deceleration10");
         }
 
-        championsSfx.play();
+        playSound(championsSfx);
     }
     else
     {
@@ -60,7 +60,7 @@ function setState_GameOver()
             g.tweenProperty(gameOverTextDesc[i], "x", -100, gameOverTextDesc[i].x, 60, "deceleration10");
         }
 
-        gameOverSfx.play();
+        playSound(gameOverSfx);
     }
 
     gameOverTextTitle.layer = 10;

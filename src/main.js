@@ -17,11 +17,14 @@ var assets =
     "sounds/crowd.wav",
     "sounds/gameOver.wav",
     "sounds/champions.wav",
-    "sounds/ballReset.wav"
+    "sounds/ballReset.wav",
+    "sounds/perihelium.mp3"
 ];
 
 var g = gaEngine(640, 851, onLoadComplete, assets);
 g.start();
+
+var music = g.sound("sounds/perihelium.mp3");
 
 function onLoadComplete()
 {
@@ -35,8 +38,22 @@ function onLoadComplete()
     initGameOver();
 
     g.key.m = g.keyboard(77);
-    g.key.r = g.keyboard(82);
+    g.key.m.press = function()
+    {
+        toggleMusic();
+    };
+
     g.key.s = g.keyboard(83);
+    g.key.s.press = function()
+    {
+        toggleSound();
+    };
+
+    g.key.r = g.keyboard(82);
+
+    music.loop = true;
+    music.volume = 0.25;
+    music.play();
 
     setState_PreSnap();
 }

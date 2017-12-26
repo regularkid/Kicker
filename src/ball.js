@@ -83,12 +83,12 @@ function updateBallPhysics()
     {
         ballVel = {x: 0, y: 0, z: 0};
         playBallAnim("idle");
-        landSfx.play();
+        playSound(landSfx);
 
         if (ballStatus == BallStatusEnum.None)
         {
             ballStatus = BallStatusEnum.NoGood;
-            noGoodSfx.play();
+            playSound(noGoodSfx);
         }
     }
 }
@@ -130,18 +130,18 @@ function updateBallStatus()
             ballVel.y = -ballVel.y * 0.3;
             ballVel.x = -10.0 + (Math.random() * 20.0);
 
-            boinkHitSfx.play();
-            boinkReverbSfx.play();
+            playSound(boinkHitSfx);
+            playSound(boinkReverbSfx);
         }
 
         if (ballStatus == BallStatusEnum.Good)
         {
-            goodSfx.play();
-            crowdSfx.play();
+            playSound(goodSfx);
+            playSound(crowdSfx);
         }
         else
         {
-            noGoodSfx.play();
+            playSound(noGoodSfx);
         }
     }
 }
@@ -173,7 +173,7 @@ function resetBall()
     ballStatus = BallStatusEnum.None;
     kickDistance = ballPos.y + 17;
 
-    ballResetSfx.play();
+    playSound(ballResetSfx);
 }
 
 function playBallAnim(animName)
@@ -193,14 +193,14 @@ function playBallAnim(animName)
 function startBallSnap()
 {
     ballVel.y = 25;
-    hikeSfx.play();
+    playSound(hikeSfx);
 }
 
 function startBallKick()
 {
     playBallAnim("flipping");
-    kickUpSfx.play();
-    kickHitSfx.play();
+    playSound(kickUpSfx);
+    playSound(kickHitSfx);
 
     var power = getPowerMeterValue()*getPowerMeterValue();
     ballVel.x = getAngleMeterValue() * 8;

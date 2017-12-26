@@ -16,3 +16,31 @@ function resetInputBindings()
     g.key.rightArrow.press = undefined;
     g.key.r.press = undefined;
 }
+
+var soundOn = true;
+function playSound(sound)
+{
+    if (soundOn)
+    {
+        sound.play();
+    }
+}
+
+function toggleSound()
+{
+    soundOn = !soundOn;
+}
+
+var musicOn = true;
+function toggleMusic()
+{
+    musicOn = !musicOn;
+    if (musicOn)
+    {
+        music.play();
+    }
+    else
+    {
+        music.pause();
+    }
+}
