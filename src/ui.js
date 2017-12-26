@@ -23,8 +23,6 @@ function initUI()
     powerMeterFg = g.rectangle(12, 12, "#00FF21", "#00FF21", 5, 100, 100);
     powerMeterBg.layer = 1;
     powerMeterFg.layer = 2;
-
-    showHUD();
 }
 
 function resetAngleMeterPos()

@@ -55,5 +55,5 @@ function onLoadComplete()
     music.volume = 0.25;
     music.play();
 
-    setState_PreSnap();
+    setState_Intro();
 }
