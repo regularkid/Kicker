@@ -3,6 +3,7 @@ var kickResultsTime;
 function setState_KickResults()
 {
     resetInputBindings();
+    playPlayersAnim("idle");
     showPowerMeter(false);
     showResultsText();
 

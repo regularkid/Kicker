@@ -28,11 +28,11 @@ function initUI()
 function resetAngleMeterPos()
 {
     angleMeterBg.x = (ball.x + ball.halfWidth) - 100;
-    angleMeterBg.y = ball.y - 50;
+    angleMeterBg.y = ball.y - 70;
     angleMeterFg.y = angleMeterBg.y;
     updateAngleMeter();
 
-    powerMeterBg.x = ball.x + 150;
+    powerMeterBg.x = ball.x + 200;
     powerMeterBg.y = ball.y - 150;
     powerMeterFg.x = powerMeterBg.x;
     powerMeterFg.y = powerMeterBg.y;
@@ -105,7 +105,14 @@ function showResultsText()
     }
     else
     {
-        resultsText = g.text("No Good!", "70px upheavtt", "red", 320, 200);
+        if (ballStatus == BallStatusEnum.Blocked)
+        {
+            resultsText = g.text("Blocked!", "70px upheavtt", "red", 320, 200);
+        }
+        else
+        {
+            resultsText = g.text("No Good!", "70px upheavtt", "red", 320, 200);
+        }
         g.tweenProperty(resultsText, "x", 640, resultsText.x, 60, "deceleration10");
     }
 

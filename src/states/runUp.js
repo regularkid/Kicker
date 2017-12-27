@@ -4,6 +4,7 @@ function setState_RunUp()
 {
     resetInputBindings();
     showAngleMeter(false);
+    startRushPlayer();
 
     runTime = -1.0;
     g.key.upArrow.press = function()
@@ -12,6 +13,7 @@ function setState_RunUp()
         {
             runTime = 1.0;
             showPowerMeter(true);
+            startKickerRunUp();
         }
         else
         {
@@ -19,20 +21,18 @@ function setState_RunUp()
         }
     };
 
-    // DEBUG
-    runTime = 1.0;
-    showPowerMeter(true);
-
     g.state = runUp;
 }
 
 function runUp()
 {
     updateCrowd();
+    updatePlayers();
     
     if (runTime > 0.0)
     {
         updatePowerMeter();
+        setKickPlayerPos(1.0 - runTime);
 
         var elapsed = 1.0 / g.fps;
         runTime -= elapsed;

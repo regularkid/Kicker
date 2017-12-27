@@ -5,6 +5,8 @@ var assets =
     "sprites/ball.png",
     "sprites/windFlag.png",
     "sprites/referee.png",
+    "sprites/playerBlue.png",
+    "sprites/playerRed.png",
     "fonts/upheavtt.ttf",
     "sounds/hike.wav",
     "sounds/good.wav",
@@ -18,6 +20,7 @@ var assets =
     "sounds/gameOver.wav",
     "sounds/champions.wav",
     "sounds/ballReset.wav",
+    "sounds/blocked.wav",
     "sounds/perihelium.mp3"
 ];
 
@@ -36,6 +39,7 @@ function onLoadComplete()
     initUI();
     initCrowd();
     initGameOver();
+    initPlayers();
 
     g.key.m = g.keyboard(77);
     g.key.m.press = function()

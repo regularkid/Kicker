@@ -2,6 +2,7 @@ function setState_InAir()
 {
     resetInputBindings();
     startBallKick(); 
+    sortPlayersBelowBall();
 
     g.state = inAir;
 }

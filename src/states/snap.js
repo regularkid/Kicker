@@ -3,6 +3,7 @@ var snapTime;
 function setState_Snap()
 {
     startBallSnap();
+    playPlayersAnim("running");
     resetInputBindings();
 
     // Ensure ball is snapped 7 yrds back
@@ -15,6 +16,7 @@ function snap()
 {
     updateBall();
     updateCrowd();
+    updatePlayers();
     
     var elapsed = 1.0 / g.fps;
     snapTime -= elapsed;

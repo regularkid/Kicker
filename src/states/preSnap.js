@@ -1,8 +1,10 @@
 function setState_PreSnap()
 {
     resetBall();
+    resetPlayers();
     playBallAnim("idle");
     playRefereeAnim("idle");
+    playPlayersAnim("idle");
     sortBallAboveUprights();
     randomizeWind();
     resetAngleMeterPos();
