@@ -10,6 +10,7 @@ function resetProgression()
 {
     numWins = 0;
     numLosses = 0;
+    maxKickDistance = -1;
 }
 
 function getCurWeek()
