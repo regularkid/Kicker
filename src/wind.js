@@ -31,6 +31,11 @@ function updateWind()
 function randomizeWind()
 {
     wind = -windMax + Math.random()*windMax*2.0;
+    if (easyMode)
+    {
+        wind *= 0.5;
+    }
+    
     var pct = wind / windMax;
     windFlags[0].rotation = deg2rad(pct * -50.0);
     windFlags[1].rotation = deg2rad(pct * -50.0);
@@ -38,9 +43,4 @@ function randomizeWind()
     windFlags[1].fps = 2 + Math.abs(pct)*10;
     windFlags[0].play();
     windFlags[1].play();
-
-    if (easyMode)
-    {
-        wind *= 0.5;
-    }
 }
