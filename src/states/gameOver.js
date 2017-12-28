@@ -21,7 +21,7 @@ function setState_GameOver()
     gameOverBackground = g.rectangle(g.canvas.width, 200, "#181818", "#181818", 0, 0, 275);
     gameOverBackground.layer = 9;
 
-    if (getCurWeek() == 20)
+    if (gameWon())
     {
         gameOverTextTitle = g.text("Super Bowl Champions!", "50px upheavtt", "rgb(0, 255, 0)", 320, 285);
         g.tweenProperty(gameOverTextTitle, "x", -100, gameOverTextTitle.x, 60, "deceleration10");
@@ -112,7 +112,7 @@ function gameOver()
 
         if (gameOverColorFlashOn)
         {
-            if (getCurWeek() == 20)
+            if (gameWon())
             {
                 gameOverTextDesc[2].fillStyle = "rgb(0, 255, 0)";
             }
@@ -123,7 +123,7 @@ function gameOver()
         }
         else
         {
-            if (getCurWeek() == 20)
+            if (gameWon())
             {
                 gameOverTextDesc[2].fillStyle = "rgb(0, 100, 0)";
             }
@@ -133,4 +133,9 @@ function gameOver()
             }
         }
     }
+}
+
+function gameWon()
+{
+    return getCurWeek() == 20 && ballStatus == BallStatusEnum.Good;
 }
