@@ -8,8 +8,8 @@ function initProgression()
 
 function resetProgression()
 {
-    numWins = 0;
-    numLosses = 0;
+    numWins = 3;
+    numLosses = 12;
     maxKickDistance = -1;
 }
 

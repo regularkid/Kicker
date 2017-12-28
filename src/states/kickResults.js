@@ -36,6 +36,8 @@ function kickResults()
     kickResultsTime -= elapsed;
     if (kickResultsTime <= 0.0)
     {
+        hideResultsText();
+        
         if (getCurWeek() == 20 ||                                       // Super bowl champions
            (getCurWeek() == 17 && numWins <= numLosses) ||              // Didn't make the playoffs
            (getCurWeek() > 17 && ballStatus != BallStatusEnum.Good))    // Loss in the playoffs
@@ -46,7 +48,5 @@ function kickResults()
         {
             setState_PreSnap();
         }
-
-        hideResultsText();
     }
 }
