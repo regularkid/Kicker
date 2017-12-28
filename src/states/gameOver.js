@@ -92,7 +92,8 @@ function setState_GameOver()
         }
 
         resetProgression();
-        setState_PreSnap();
+        hideHUD();
+        setState_Intro();
     };
 
     g.state = gameOver;

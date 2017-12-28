@@ -1,5 +1,6 @@
 var numWins;
 var numLosses;
+var easyMode;
 
 function initProgression()
 {
@@ -8,8 +9,8 @@ function initProgression()
 
 function resetProgression()
 {
-    numWins = 3;
-    numLosses = 12;
+    numWins = 0;
+    numLosses = 0;
     maxKickDistance = -1;
 }
 

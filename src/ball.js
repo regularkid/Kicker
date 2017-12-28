@@ -202,21 +202,39 @@ function startBallKick()
     playSound(kickUpSfx);
     playSound(kickHitSfx);
 
-    var power = getPowerMeterValue()*getPowerMeterValue();
+    var power = getPowerMeterValue();
+    if (!easyMode)
+    {
+        power *= power;
+    }
+
     ballVel.x = getAngleMeterValue() * 8;
     ballVel.y = -12 - (power * 26);
+    if (easyMode)
+    {
+        ballVel.y -= 3;
+    }
+
     ballVel.z = 40;
     airControlValue = airControlStartValue;
 
     g.key.leftArrow.press = function()
     {
         ballVel.x -= airControlValue;
+        if (easyMode)
+        {
+            ballVel.x -= airControlValue;
+        }
         airControlValue *= airConrolDecreasePct;
     };
 
     g.key.rightArrow.press = function()
     {
         ballVel.x += airControlValue;
+        if (easyMode)
+        {
+            ballVel.x += airControlValue;
+        }
         airControlValue *= airConrolDecreasePct;
     };
 }

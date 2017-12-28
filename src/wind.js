@@ -38,4 +38,9 @@ function randomizeWind()
     windFlags[1].fps = 2 + Math.abs(pct)*10;
     windFlags[0].play();
     windFlags[1].play();
+
+    if (easyMode)
+    {
+        wind *= 0.5;
+    }
 }

@@ -6,7 +6,7 @@ var powerMeterBg;
 var powerMeterFg;
 var powerMeterIncreaseAmount = 17;
 var powerMeterDecreasePerSec = 40;
-var resultsText;
+var resultsText = undefined;
 var curRecordText;
 var curWeekText;
 var curDistanceText;
@@ -75,6 +75,11 @@ function updatePowerMeter()
 {
     elapsed = 1.0 / g.fps;
 
+    if (easyMode)
+    {
+        elapsed *= 0.5;
+    }
+
     powerMeterFg.height = Math.max(powerMeterFg.height - (powerMeterDecreasePerSec * elapsed), 0.0);
     powerMeterFg.y = (powerMeterBg.y + powerMeterBg.height) - powerMeterFg.height;
 }
@@ -98,6 +103,8 @@ function getPowerMeterValue()
 
 function showResultsText()
 {
+    hideResultsText();
+
     if (ballStatus == BallStatusEnum.Good)
     {
         resultsText = g.text("It's Good!", "70px upheavtt", "rgb(0, 255, 0)", 320, 200);
@@ -127,7 +134,11 @@ function showResultsText()
 
 function hideResultsText()
 {
-    g.remove(resultsText);
+    if (resultsText != undefined)
+    {
+        g.remove(resultsText);
+        resultsText = undefined;
+    }
 }
 
 function showHUD()
@@ -165,6 +176,14 @@ function showHUD()
     maxDistanceText.shadowOffsetY = 3;
     maxDistanceText.shadowBlur = 0;
     maxDistanceText.textAlign = "right";
+}
+
+function hideHUD()
+{
+    g.remove(curWeekText);
+    g.remove(curRecordText);
+    g.remove(curDistanceText);
+    g.remove(maxDistanceText);
 }
 
 function updateHUD()

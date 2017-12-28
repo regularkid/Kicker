@@ -109,7 +109,7 @@ function updatePlayers()
         }
     }
 
-    if (rushPlayerIdx >= 0)
+    if (rushPlayerIdx >= 0 && g.state != inAir)
     {
         rushPlayerTime += elapsed;
 
@@ -159,6 +159,11 @@ function startRushPlayer()
     playersRed[rushPlayerIdx].xRushStart = playersRed[rushPlayerIdx].x;
     playersRed[rushPlayerIdx].yRushStart = playersRed[rushPlayerIdx].y;
     rushTime = 2.0 - (getCurWeek() / 19.0)*0.45;
+    if (easyMode)
+    {
+        rushTime += 1.0;
+    }
+
     rushPlayerTime = 0;
 }
 

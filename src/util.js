@@ -15,6 +15,8 @@ function resetInputBindings()
     g.key.leftArrow.press = undefined;
     g.key.rightArrow.press = undefined;
     g.key.r.press = undefined;
+    g.key.e.press = undefined;
+    g.key.h.press = undefined;
 }
 
 var soundOn = true;

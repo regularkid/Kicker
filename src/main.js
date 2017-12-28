@@ -54,6 +54,8 @@ function onLoadComplete()
     };
 
     g.key.r = g.keyboard(82);
+    g.key.e = g.keyboard(69);
+    g.key.h = g.keyboard(72);
 
     music.loop = true;
     music.volume = 0.25;
