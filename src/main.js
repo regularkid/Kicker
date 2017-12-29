@@ -31,6 +31,10 @@ var music = g.sound("sounds/perihelium.mp3");
 
 function onLoadComplete()
 {
+    var actualCanvasWidth = 580;
+    g.canvas.style.width = actualCanvasWidth + "px";
+    g.canvas.style.height = (g.canvas.style.width * (g.canvas.height / g.canvas.width)) + "px";
+
     initProgression();
     initField();
     initBall();
