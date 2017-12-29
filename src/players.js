@@ -109,7 +109,7 @@ function updatePlayers()
         }
     }
 
-    if (rushPlayerIdx >= 0 && g.state != inAir)
+    if (rushPlayerIdx >= 0 && g.state == runUp)
     {
         rushPlayerTime += elapsed;
 

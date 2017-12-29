@@ -29,7 +29,7 @@ function runUp()
     updateCrowd();
     updatePlayers();
     
-    if (runTime > 0.0 && g.state != inAir && g.state != kickResults)
+    if (runTime > 0.0 && g.state == runUp)
     {
         updatePowerMeter();
         setKickPlayerPos(1.0 - runTime);
