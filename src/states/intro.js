@@ -10,7 +10,7 @@ function setState_Intro()
     showPowerMeter(false);
     playBallAnim("idle");
     ball.x = 310;
-    ball.y = 595;
+    ball.y = 605;
     ballShadow.x = ball.x;
     ballShadow.y = ball.y;
     ball.scaleX = 10.0;
@@ -37,10 +37,11 @@ function setState_Intro()
     introDescText[4] = g.text("to find out if you have what it takes", "30px upheavtt", "rgb(255, 255, 255)", 320, 190);
     introDescText[5] = g.text("to be a champion.", "30px upheavtt", "rgb(255, 255, 255)", 320, 215);
     introDescText[6] = g.text("Controls", "50px upheavtt", "rgb(0, 180, 255)", 320, 310);
-    introDescText[7] = g.text("Press 'up' to control angle and power", "30px upheavtt", "rgb(255, 255, 255)", 313, 360);
-    introDescText[8] = g.text("Press 'left' and 'right' to nudge in air", "30px upheavtt", "rgb(255, 255, 255)", 320, 385);
-    introDescText[9] = g.text("Press 's' to toggle sounds", "30px upheavtt", "rgb(255, 255, 255)", 220, 410);
-    introDescText[10] = g.text("Press 'm' to toggle music", "30px upheavtt", "rgb(255, 255, 255)", 213, 435);
+    introDescText[7] = g.text("Tap 'up' to stop angle meter", "30px upheavtt", "rgb(255, 255, 255)", 235, 360);
+    introDescText[8] = g.text("Mash 'up' to build power meter", "30px upheavtt", "rgb(255, 255, 255)", 257, 385);
+    introDescText[9] = g.text("Tap 'left' or 'right' to nudge in air", "30px upheavtt", "rgb(255, 255, 255)", 292, 410);
+    introDescText[10] = g.text("Press 's' to toggle sounds", "30px upheavtt", "rgb(255, 255, 255)", 220, 435);
+    introDescText[11] = g.text("Press 'm' to toggle music", "30px upheavtt", "rgb(255, 255, 255)", 213, 460);
 
     for (var i = 0; i < introDescText.length; i++)
     {
